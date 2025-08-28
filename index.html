@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Development Project Documentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .section h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .section h3 {
+            font-size: 1.4rem;
+            color: #334155;
+            margin: 25px 0 15px 0;
+            font-weight: 500;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 20px 0;
+        }
+        
+        .tech-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .tech-card h4 {
+            color: #3b82f6;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .tech-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .tech-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .tech-card li:before {
+            content: "✓";
+            color: #22c55e;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .timeline-container {
+            margin: 30px 0;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-table th {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .timeline-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .timeline-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .status.completed {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status.in-progress {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .status.planned {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+        
+        .flowchart {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .phase-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .phase-box {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 150px;
+            position: relative;
+        }
+        
+        .phase-box:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3b82f6;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .risk-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .risk-high { border-left-color: #ef4444; }
+        .risk-medium { border-left-color: #f59e0b; }
+        .risk-low { border-left-color: #22c55e; }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .metric-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .stack-layer {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 2px solid #3b82f6;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .frontend { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+        .backend { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+        
+        @media (max-width: 768px) {
+            .phase-flow {
+                flex-direction: column;
+            }
+            
+            .phase-box:not(:last-child)::after {
+                content: "↓";
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .appendix {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Website Development Project Documentation</h1>
+        <p class="subtitle">Educational Platform Development Using Flask & Modern Frontend Technologies</p>
+    </div>
+
+    <div class="section">
+        <h2>📋 Project Overview</h2>
+        <p>This document outlines the comprehensive timeline and deliverables for our website development project. We're building a modern educational platform using Flask for the backend and HTML/CSS/JS with Tailwind CSS for the frontend.</p>
+        
+        <div class="tech-stack-visual">
+            <div class="stack-layer frontend">
+                <h4>Frontend Layer</h4>
+                <p>HTML/CSS/JS<br>Tailwind CSS</p>
+            </div>
+            <div class="stack-layer backend">
+                <h4>Backend Layer</h4>
+                <p>Flask (Python)<br>Database Integration</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🛠️ Technology Stack Justification</h2>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h4>Frontend: HTML/CSS/JS with Tailwind CSS</h4>
+                <ul>
+                    <li><strong>Responsive Design:</strong> Utility-first approach enables rapid development of fully responsive interfaces</li>
+                    <li><strong>Modern Aesthetics:</strong> Pre-designed components ensure consistent, professional appearance</li>
+                    <li><strong>Developer Efficiency:</strong> Rapid prototyping with minimal custom CSS required</li>
+                    <li><strong>Maintainability:</strong> Utility classes create more consistent and predictable code</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <h4>Backend: Flask (Python) with Firebase</h4>
+                <ul>
+                    <li><strong>Lightweight & Flexible:</strong> Minimalist framework perfect for medium-scale application</li>
+                    <li><strong>Python Ecosystem:</strong> Access to robust libraries for future AI/ML capabilities</li>
+                    <li><strong>Rapid Development:</strong> Simple setup and intuitive routing accelerate development</li>
+                    <li><strong>Firebase Integration:</strong> Seamless integration with Firebase services for authentication and database</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <h4>Database & Hosting</h4>
+                <ul>
+                    <li><strong>Firebase:</strong> Real-time database with built-in authentication and security</li>
+                    <li><strong>Cloud Storage:</strong> Firebase storage for media files and assets</li>
+                    <li><strong>Hostinger Deployment:</strong> Reliable hosting platform with good performance</li>
+                    <li><strong>Scalable Architecture:</strong> Firebase scales automatically with user growth</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📅 Project Timeline & Deliverables</h2>
+        
+        <div class="timeline-container">
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Tasks</th>
+                        <th>Deliverables</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Week 1</strong></td>
+                        <td>Set up project structure (frontend & backend folders)<br>Configure Tailwind<br>Create navbar & footer components<br>Build Home Page (hero section, toggle feature)<br>Build Our Story page <br> Auth Page</td>
+                        <td>Project skeleton + shared components ready</td>
+                        <td><span class="status Ongoing">Ongoing</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 2</strong></td>
+                        <td>Develop Programs page<br>Develop Learning Paths page<br>Build FAQs (accordion style)<br>Build Contact Us page (form + map)<br>Build Register page</td>
+                        <td>Core pages implementation</td>
+                        <td><span class="status planned">Planned</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 3</strong></td>
+                        <td>Build Dashboard template (static)<br>Setup Flask backend folder structure<br>Configure Firebase integration<br>Add animations & JavaScript interactivity</td>
+                        <td>Backend setup + Firebase integration</td>
+                        <td><span class="status planned">Planned</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 4</strong></td>
+                        <td>Implement Firebase authentication<br>Connect forms to Firebase<br>Build API endpoints<br>Insert images, icons, assets</td>
+                        <td>Functional backend with authentication</td>
+                        <td><span class="status planned">Planned</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 5</strong></td>
+                        <td>Cross-browser/mobile testing<br>Fix UI/UX bugs<br>Performance optimization<br>Final testing & documentation</td>
+                        <td>Complete application</td>
+                        <td><span class="status planned">Planned</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔄 Development Phase Workflow</h2>
+        
+        <div class="flowchart">
+            <div class="phase-flow">
+                <div class="phase-box">
+                    <h4>Phase 1</h4>
+                    <p>Foundation</p>
+                    <small>Week 1</small>
+                </div>
+                <div class="phase-box">
+                    <h4>Phase 2</h4>
+                    <p>Core Pages</p>
+                    <small>Week 2</small>
+                </div>
+                <div class="phase-box">
+                    <h4>Phase 3</h4>
+                    <p>Backend Setup</p>
+                    <small>Week 3</small>
+                </div>
+                <div class="phase-box">
+                    <h4>Phase 4</h4>
+                    <p>Integration</p>
+                    <small>Week 4</small>
+                </div>
+                <div class="phase-box">
+                    <h4>Phase 5</h4>
+                    <p>Deployment</p>
+                    <small>Week 5</small>
+                </div>
+            </div>
+        </div>
+
+        <h3>Phase 1: Foundation (Week 1)</h3>
+        <p><strong>Objectives:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>Define project scope and requirements</li>
+            <li>Establish development environment</li>
+            <li>Create foundational components and basic pages</li>
+        </ul>
+        
+        <p><strong>Key Decisions:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Selected Tailwind CSS for rapid UI development</li>
+            <li>Chose Flask for its Python integration and simplicity</li>
+            <li>Firebase for database and authentication services</li>
+        </ul>
+
+        <h3>Phase 2: Core Pages (Week 2)</h3>
+        <p><strong>Objectives:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>Implement main application pages</li>
+            <li>Design user interface components</li>
+            <li>Build interactive elements and forms</li>
+        </ul>
+        
+        <p><strong>Deliverables:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Programs and Learning Paths pages</li>
+            <li>FAQ and Contact pages with forms</li>
+            <li>Registration page</li>
+        </ul>
+
+        <h3>Phase 3: Backend Setup (Week 3)</h3>
+        <p><strong>Objectives:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>Setup Flask backend architecture</li>
+            <li>Configure Firebase integration</li>
+            <li>Add interactive animations and JavaScript</li>
+        </ul>
+        
+        <p><strong>Technical Implementation:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Flask project structure setup</li>
+            <li>Firebase configuration and SDK integration</li>
+            <li>Dashboard template creation</li>
+        </ul>
+
+        <h3>Phase 4: Integration (Week 4)</h3>
+        <p><strong>Objectives:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>Implement Firebase authentication</li>
+            <li>Connect frontend forms to Firebase</li>
+            <li>Build API endpoints and data flow</li>
+        </ul>
+        
+        <p><strong>Technical Approach:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Firebase Auth for user management</li>
+            <li>Firestore database integration</li>
+            <li>RESTful API development</li>
+        </ul>
+
+        <h3>Phase 5: Testing (Week 5)</h3>
+        <p><strong>Objectives:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>Comprehensive testing across devices and browsers</li>
+            <li>Performance optimization</li>
+        </ul>
+        
+    </div>
+
+    <div class="appendix">
+        <h2>📋 Appendix</h2>
+        
+        <h3>Development Team</h3>
+        <ul style="margin-left: 20px; margin-bottom: 20px;">
+            <li><strong>Frontend & Backend Developer:</strong> Sibghatullah Asif</li>
+            <li><strong>Project Manager:</strong> Taha Kiyani </li>
+        </ul>
+
+        <h3>Technical Specifications</h3>
+        <ul style="margin-left: 20px;">
+            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Tailwind CSS</li>
+            <li><strong>Backend:</strong> Flask (Python)</li>
+            <li><strong>Database:</strong> Firebase Firestore</li>
+            <li><strong>Authentication:</strong> Firebase Auth</li>
+            <li><strong>Storage:</strong> Firebase Storage</li>
+            <li><strong>Deployment:</strong> Hostinger</li>
+        </ul>
+    </div>
+</body>
+</html>
