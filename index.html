@@ -284,22 +284,29 @@
             border-radius: 12px;
             margin-top: 40px;
         }
+        
+        .update-highlight {
+            background-color: #fef3c7;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Website Development Project Documentation</h1>
-        <p class="subtitle">Educational Platform Development Using Flask & Modern Frontend Technologies</p>
+        <p class="subtitle">Educational Platform Development Using Flask & React with Vite</p>
     </div>
 
     <div class="section">
         <h2>📋 Project Overview</h2>
-        <p>This document outlines the comprehensive timeline and deliverables for our website development project. We're building a modern educational platform using Flask for the backend and HTML/CSS/JS with Tailwind CSS for the frontend.</p>
+        <p>This document outlines the comprehensive timeline and deliverables for our website development project. We're building a modern educational platform using Flask for the backend and <span class="update-highlight">React with Vite</span> for the frontend.</p>
         
         <div class="tech-stack-visual">
             <div class="stack-layer frontend">
                 <h4>Frontend Layer</h4>
-                <p>HTML/CSS/JS<br>Tailwind CSS</p>
+                <p><span class="update-highlight">React + Vite</span><br>Tailwind CSS</p>
             </div>
             <div class="stack-layer backend">
                 <h4>Backend Layer</h4>
@@ -313,12 +320,13 @@
         
         <div class="tech-grid">
             <div class="tech-card">
-                <h4>Frontend: HTML/CSS/JS with Tailwind CSS</h4>
+                <h4>Frontend: <span class="update-highlight">React with Vite</span></h4>
                 <ul>
-                    <li><strong>Responsive Design:</strong> Utility-first approach enables rapid development of fully responsive interfaces</li>
-                    <li><strong>Modern Aesthetics:</strong> Pre-designed components ensure consistent, professional appearance</li>
-                    <li><strong>Developer Efficiency:</strong> Rapid prototyping with minimal custom CSS required</li>
-                    <li><strong>Maintainability:</strong> Utility classes create more consistent and predictable code</li>
+                    <li><strong>Component-Based Architecture:</strong> Enables reusable UI components and better code organization</li>
+                    <li><strong>Enhanced Performance:</strong> Vite provides fast cold start and rapid hot module replacement (HMR)</li>
+                    <li><strong>Modern Development Experience:</strong> Rich ecosystem with extensive libraries and tools</li>
+                    <li><strong>State Management:</strong> Built-in state management capabilities for complex applications</li>
+                    <li><strong>Developer Efficiency:</strong> Faster build times and optimized development workflow</li>
                 </ul>
             </div>
             
@@ -360,31 +368,31 @@
                 <tbody>
                     <tr>
                         <td><strong>Week 1</strong></td>
-                        <td>Set up project structure (frontend & backend folders)<br>Configure Tailwind<br>Create navbar & footer components<br>Build Home Page (hero section, toggle feature)<br>Build Our Story page <br> Auth Page</td>
-                        <td>Project skeleton + shared components ready</td>
+                        <td>Set up <span class="update-highlight">React + Vite</span> project structure<br>Configure Tailwind in React<br>Create reusable React components (navbar, footer)<br>Build Home Page component (hero section, toggle feature)<br>Build Our Story page component<br>Auth Page component</td>
+                        <td>React project skeleton + component library</td>
                         <td><span class="status ongoing">Ongoing</span></td>
                     </tr>
                     <tr>
                         <td><strong>Week 2</strong></td>
-                        <td>Develop Programs page<br>Develop Learning Paths page<br>Build FAQs (accordion style)<br>Build Contact Us page (form + map)<br>Build Register page</td>
-                        <td>Core pages implementation</td>
+                        <td>Develop Programs page component<br>Develop Learning Paths page component<br>Build FAQs component (accordion style)<br>Build Contact Us component (form + map)<br>Build Register component<br><span class="update-highlight">Implement React Router for navigation</span></td>
+                        <td>Core React components implementation</td>
                         <td><span class="status planned">Planned</span></td>
                     </tr>
                     <tr>
                         <td><strong>Week 3</strong></td>
-                        <td>Build Dashboard template (static)<br>Setup Flask backend folder structure<br>Configure Firebase integration<br>Add animations & JavaScript interactivity</td>
-                        <td>Backend setup + Firebase integration</td>
+                        <td>Build Dashboard component (static)<br>Setup Flask backend folder structure<br>Configure Firebase integration<br><span class="update-highlight">Add React animations & interactivity</span><br><span class="update-highlight">Set up state management</span></td>
+                        <td>Backend setup + React component refinement</td>
                         <td><span class="status planned">Planned</span></td>
                     </tr>
                     <tr>
                         <td><strong>Week 4</strong></td>
-                        <td>Implement Firebase authentication<br>Connect forms to Firebase<br>Build API endpoints<br>Insert images, icons, assets</td>
-                        <td>Functional backend with authentication</td>
+                        <td>Implement Firebase authentication <span class="update-highlight">in React</span><br>Connect React forms to Firebase<br>Build API endpoints<br>Insert images, icons, assets<br><span class="update-highlight">Implement React hooks for data fetching</span></td>
+                        <td>Functional backend with React frontend integration</td>
                         <td><span class="status planned">Planned</span></td>
                     </tr>
                     <tr>
                         <td><strong>Week 5</strong></td>
-                        <td>Cross-browser/mobile testing<br>Fix UI/UX bugs<br>Performance optimization<br>Final testing & documentation</td>
+                        <td>Cross-browser/mobile testing<br>Fix UI/UX bugs<br>Performance optimization<br><span class="update-highlight">React bundle optimization with Vite</span><br>Final testing & documentation</td>
                         <td>Complete application</td>
                         <td><span class="status planned">Planned</span></td>
                     </tr>
@@ -405,7 +413,7 @@
                 </div>
                 <div class="phase-box">
                     <h4>Phase 2</h4>
-                    <p>Core Pages</p>
+                    <p>Core Components</p>
                     <small>Week 2</small>
                 </div>
                 <div class="phase-box">
@@ -420,7 +428,7 @@
                 </div>
                 <div class="phase-box">
                     <h4>Phase 5</h4>
-                    <p>Deployment</p>
+                    <p>Testing & Optimization</p>
                     <small>Week 5</small>
                 </div>
             </div>
@@ -430,30 +438,31 @@
         <p><strong>Objectives:</strong></p>
         <ul style="margin-left: 20px; margin-bottom: 15px;">
             <li>Define project scope and requirements</li>
-            <li>Establish development environment</li>
-            <li>Create foundational components and basic pages</li>
+            <li>Establish development environment with <span class="update-highlight">React and Vite</span></li>
+            <li>Create foundational React components and basic pages</li>
         </ul>
         
         <p><strong>Key Decisions:</strong></p>
         <ul style="margin-left: 20px;">
-            <li>Selected Tailwind CSS for rapid UI development</li>
+            <li>Selected <span class="update-highlight">React with Vite</span> for modern frontend development</li>
             <li>Chose Flask for its Python integration and simplicity</li>
             <li>Firebase for database and authentication services</li>
         </ul>
 
-        <h3>Phase 2: Core Pages (Week 2)</h3>
+        <h3>Phase 2: Core Components (Week 2)</h3>
         <p><strong>Objectives:</strong></p>
         <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li>Implement main application pages</li>
-            <li>Design user interface components</li>
-            <li>Build interactive elements and forms</li>
+            <li>Implement main application pages as React components</li>
+            <li>Design reusable UI components</li>
+            <li>Build interactive elements with React</li>
+            <li><span class="update-highlight">Implement React Router for navigation</span></li>
         </ul>
         
         <p><strong>Deliverables:</strong></p>
         <ul style="margin-left: 20px;">
-            <li>Programs and Learning Paths pages</li>
-            <li>FAQ and Contact pages with forms</li>
-            <li>Registration page</li>
+            <li>Programs and Learning Paths page components</li>
+            <li>FAQ and Contact components with forms</li>
+            <li>Registration component</li>
         </ul>
 
         <h3>Phase 3: Backend Setup (Week 3)</h3>
@@ -461,22 +470,24 @@
         <ul style="margin-left: 20px; margin-bottom: 15px;">
             <li>Setup Flask backend architecture</li>
             <li>Configure Firebase integration</li>
-            <li>Add interactive animations and JavaScript</li>
+            <li><span class="update-highlight">Add React animations and interactivity</span></li>
+            <li><span class="update-highlight">Set up state management in React</span></li>
         </ul>
         
         <p><strong>Technical Implementation:</strong></p>
         <ul style="margin-left: 20px;">
             <li>Flask project structure setup</li>
             <li>Firebase configuration and SDK integration</li>
-            <li>Dashboard template creation</li>
+            <li>Dashboard component creation</li>
         </ul>
 
         <h3>Phase 4: Integration (Week 4)</h3>
         <p><strong>Objectives:</strong></p>
         <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li>Implement Firebase authentication</li>
-            <li>Connect frontend forms to Firebase</li>
+            <li>Implement Firebase authentication <span class="update-highlight">in React</span></li>
+            <li>Connect React forms to Firebase</li>
             <li>Build API endpoints and data flow</li>
+            <li><span class="update-highlight">Implement React hooks for data fetching</span></li>
         </ul>
         
         <p><strong>Technical Approach:</strong></p>
@@ -484,15 +495,17 @@
             <li>Firebase Auth for user management</li>
             <li>Firestore database integration</li>
             <li>RESTful API development</li>
+            <li><span class="update-highlight">React context for state management</span></li>
         </ul>
 
-        <h3>Phase 5: Testing (Week 5)</h3>
+        <h3>Phase 5: Testing & Optimization (Week 5)</h3>
         <p><strong>Objectives:</strong></p>
         <ul style="margin-left: 20px; margin-bottom: 15px;">
             <li>Comprehensive testing across devices and browsers</li>
             <li>Performance optimization</li>
+            <li><span class="update-highlight">React bundle optimization with Vite</span></li>
+            <li>Final deployment preparation</li>
         </ul>
-        
     </div>
 
     <div class="appendix">
@@ -506,12 +519,13 @@
 
         <h3>Technical Specifications</h3>
         <ul style="margin-left: 20px;">
-            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Tailwind CSS</li>
+            <li><strong>Frontend:</strong> <span class="update-highlight">React, Vite, JavaScript, Tailwind CSS</span></li>
             <li><strong>Backend:</strong> Flask (Python)</li>
             <li><strong>Database:</strong> Firebase Firestore</li>
             <li><strong>Authentication:</strong> Firebase Auth</li>
             <li><strong>Storage:</strong> Firebase Storage</li>
             <li><strong>Deployment:</strong> Hostinger</li>
+            <li><strong>Build Tool:</strong> <span class="update-highlight">Vite</span></li>
         </ul>
     </div>
 </body>
