@@ -28,6 +28,7 @@
             margin-bottom: 50px;
             border-bottom: 3px solid #3b82f6;
             padding-bottom: 30px;
+            position: relative;
         }
         
         .header h1 {
@@ -41,6 +42,28 @@
             font-size: 1.2rem;
             color: #64748b;
             font-weight: 400;
+        }
+        
+        .download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
         
         .section {
@@ -272,6 +295,14 @@
             .tech-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .download-btn {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin: 20px auto;
+                display: inline-flex;
+            }
         }
         
         .page-break {
@@ -285,12 +316,39 @@
             margin-top: 40px;
         }
         
+        
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #22c55e;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Website Development Project Documentation</h1>
         <p class="subtitle">Educational Platform Development Using Flask & React with Vite</p>
+        <a href="Todolist.xlsx" class="download-btn" download="Todolist.xlsx">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Todo List
+        </a>
     </div>
 
     <div class="section">
@@ -522,5 +580,26 @@
             <li><strong>Build Tool:</strong> <span class="update-highlight">Vite</span></li>
         </ul>
     </div>
+
+    <div class="notification" id="downloadNotification">
+        Todo List downloaded successfully!
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.querySelector('.download-btn');
+            const notification = document.getElementById('downloadNotification');
+            
+            downloadBtn.addEventListener('click', function() {
+                // Show notification
+                notification.classList.add('show');
+                
+                // Hide notification after 3 seconds
+                setTimeout(function() {
+                    notification.classList.remove('show');
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
