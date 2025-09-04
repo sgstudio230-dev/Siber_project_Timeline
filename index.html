@@ -152,7 +152,36 @@
             padding: 15px;
             border-bottom: 1px solid #e2e8f0;
         }
-        
+        .header .subtitle {
+      font-size: 1.2rem;
+      color: #64748b;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .link-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .link-box a {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .link-box a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
         .timeline-table tr:hover {
             background: #f8fafc;
         }
@@ -339,19 +368,14 @@
 </head>
 <body>
     <div class="header">
-        <h1>Website Development Project Documentation</h1>
-        <p class="subtitle">Educational Platform Development Using Flask & React with Vite<br>
-        https://docs.google.com/spreadsheets/d/1LbfyZvyM8vv1W8i-M6si04n2i03RkF_z/edit?gid=954759923#gid=954759923</p>
-        <a href="Todolist.xlsx" class="download-btn" download="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download Todo List
-            view
-        </a>
+    <h1>Website Development Project Documentation</h1>
+    <p class="subtitle">Educational Platform Development Using Flask & React with Vite</p>
+
+    <div class="link-box">
+      <a href="https://docs.google.com/document/d/1igDOZ3a0Sm9CrXERVTbiJ41mzJd9e73B/edit" target="_blank">📄 View Google Docs</a>
+      <a href="https://docs.google.com/spreadsheets/d/1LbfyZvyM8vv1W8i-M6si04n2i03RkF_z/edit?gid=954759923#gid=954759923" target="_blank">📊 View Google Sheets</a>
     </div>
+  </div>
 
     <div class="section">
         <h2>📋 Project Overview</h2>
