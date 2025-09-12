@@ -1,631 +1,866 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Development Project Documentation</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: white;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 3px solid #3b82f6;
-            padding-bottom: 30px;
-            position: relative;
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            color: #1e40af;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .header .subtitle {
-            font-size: 1.2rem;
-            color: #64748b;
-            font-weight: 400;
-        }
-        
-        .download-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-        }
-        
-        .section {
-            margin-bottom: 50px;
-            background: #f8fafc;
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 5px solid #3b82f6;
-        }
-        
-        .section h2 {
-            font-size: 1.8rem;
-            color: #1e40af;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .section h3 {
-            font-size: 1.4rem;
-            color: #334155;
-            margin: 25px 0 15px 0;
-            font-weight: 500;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 20px 0;
-        }
-        
-        .tech-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            border: 2px solid #e2e8f0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        
-        .tech-card h4 {
-            color: #3b82f6;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .tech-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .tech-card li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        
-        .tech-card li:before {
-            content: "✓";
-            color: #22c55e;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        .timeline-container {
-            margin: 30px 0;
-        }
-        
-        .timeline-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-table th {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .timeline-table td {
-            padding: 15px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .header .subtitle {
-      font-size: 1.2rem;
-      color: #64748b;
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-    .link-box {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    .link-box a {
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: white;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
 
-    .link-box a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-    }
-        .timeline-table tr:hover {
-            background: #f8fafc;
-        }
-        
-        .status {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-align: center;
-        }
-        
-        .status.completed {
-            background: #dcfce7;
-            color: #166534;
-        }
-        
-        .status.in-progress {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        
-        .status.planned {
-            background: #e0e7ff;
-            color: #3730a3;
-        }
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+        border-bottom: 3px solid #3b82f6;
+        padding-bottom: 30px;
+        position: relative;
+      }
 
-        .status.ongoing {
-            background: #565752;
-            color: #f9fc64;
-        }
-        
-        .flowchart {
-            margin: 30px 0;
-            text-align: center;
-        }
-        
+      .header h1 {
+        font-size: 2.5rem;
+        color: #1e40af;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .header .subtitle {
+        font-size: 1.2rem;
+        color: #64748b;
+        font-weight: 400;
+      }
+
+      .download-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .section {
+        margin-bottom: 50px;
+        background: #f8fafc;
+        padding: 30px;
+        border-radius: 12px;
+        border-left: 5px solid #3b82f6;
+      }
+
+      .section h2 {
+        font-size: 1.8rem;
+        color: #1e40af;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .section h3 {
+        font-size: 1.4rem;
+        color: #334155;
+        margin: 25px 0 15px 0;
+        font-weight: 500;
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 20px 0;
+      }
+
+      .tech-card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        border: 2px solid #e2e8f0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .tech-card h4 {
+        color: #3b82f6;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .tech-card ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .tech-card li {
+        padding: 8px 0;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .tech-card li:before {
+        content: "✓";
+        color: #22c55e;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .timeline-container {
+        margin: 30px 0;
+      }
+
+      .timeline-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-table th {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: 600;
+      }
+
+      .timeline-table td {
+        padding: 15px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .header .subtitle {
+        font-size: 1.2rem;
+        color: #64748b;
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+
+      .link-box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .link-box a {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .link-box a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .timeline-table tr:hover {
+        background: #f8fafc;
+      }
+
+      .status {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .status.completed {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      .status.in-progress {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      .status.planned {
+        background: #e0e7ff;
+        color: #3730a3;
+      }
+
+      .status.ongoing {
+        background: #565752;
+        color: #f9fc64;
+      }
+
+      .flowchart {
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .phase-flow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .phase-box {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        min-width: 150px;
+        position: relative;
+      }
+
+      .phase-box:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #3b82f6;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .risk-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .risk-card {
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .risk-high {
+        border-left-color: #ef4444;
+      }
+
+      .risk-medium {
+        border-left-color: #f59e0b;
+      }
+
+      .risk-low {
+        border-left-color: #22c55e;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .metric-card {
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .metric-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #3b82f6;
+        margin-bottom: 10px;
+      }
+
+      .tech-stack-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+      }
+
+      .stack-layer {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        border: 2px solid #3b82f6;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+        min-width: 150px;
+      }
+
+      .frontend {
+        background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      }
+
+      .backend {
+        background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+      }
+
+      @media (max-width: 768px) {
         .phase-flow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 20px 0;
+          flex-direction: column;
         }
-        
-        .phase-box {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 150px;
-            position: relative;
-        }
-        
+
         .phase-box:not(:last-child)::after {
-            content: "→";
-            position: absolute;
-            right: -30px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #3b82f6;
-            font-size: 2rem;
-            font-weight: bold;
+          content: "↓";
+          right: 50%;
+          top: 100%;
+          transform: translateX(50%);
         }
-        
-        .risk-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+
+        .tech-grid {
+          grid-template-columns: 1fr;
         }
-        
-        .risk-card {
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 20px;
+
+        .download-btn {
+          position: relative;
+          top: 0;
+          right: 0;
+          margin: 20px auto;
+          display: inline-flex;
         }
-        
-        .risk-high { border-left-color: #ef4444; }
-        .risk-medium { border-left-color: #f59e0b; }
-        .risk-low { border-left-color: #22c55e; }
-        
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .metric-card {
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #3b82f6;
-            margin-bottom: 10px;
-        }
-        
-        .tech-stack-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 30px 0;
-        }
-        
-        .stack-layer {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            border: 2px solid #3b82f6;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-            min-width: 150px;
-        }
-        
-        .frontend { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
-        .backend { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
-        
-        @media (max-width: 768px) {
-            .phase-flow {
-                flex-direction: column;
-            }
-            
-            .phase-box:not(:last-child)::after {
-                content: "↓";
-                right: 50%;
-                top: 100%;
-                transform: translateX(50%);
-            }
-            
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .download-btn {
-                position: relative;
-                top: 0;
-                right: 0;
-                margin: 20px auto;
-                display: inline-flex;
-            }
-        }
-        
-        .page-break {
-            page-break-before: always;
-        }
-        
-        .appendix {
-            background: #f1f5f9;
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 40px;
-        }
-        
-        
-        
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #22c55e;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .notification.show {
-            transform: translateX(0);
-        }
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+
+      .appendix {
+        background: #f1f5f9;
+        padding: 30px;
+        border-radius: 12px;
+        margin-top: 40px;
+      }
+
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #22c55e;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+      }
+
+      .notification.show {
+        transform: translateX(0);
+      }
+
+      .update-highlight {
+        background-color: #fef9c3;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-    <h1>Website Development Project Documentation</h1>
-    <p class="subtitle">Educational Platform Development Using Flask & React with Vite</p>
+      <h1>Website Development Project Documentation</h1>
+      <p class="subtitle">
+        Note: This is only the website timeline for frontend and backend
+        development of the provided UI design website using Flask and React with
+        Vite. App timeline is not included in this timeline if siberKoza wants i
+        will provide them the api from the backend of website which they can
+        later use to build the backend of the app.
+      </p>
 
-    <div class="link-box">
-      <a href="https://docs.google.com/document/d/1igDOZ3a0Sm9CrXERVTbiJ41mzJd9e73B/edit" target="_blank">📄 View Project Documentation</a>
-      <a href="https://docs.google.com/spreadsheets/d/1LbfyZvyM8vv1W8i-M6si04n2i03RkF_z/edit?gid=954759923#gid=954759923" target="_blank">📊 View TimeLine Documentation</a>
-    </div>
-  </div>
+      <p class="subtitle">
+        Project Start Date: September 1, 2025 | Current Date: September 12,
+        2025(contract date)
+      </p>
 
-    <div class="section">
-        <h2>📋 Project Overview</h2>
-        <p>This document outlines the comprehensive timeline and deliverables for our website development project. We're building a modern educational platform using Flask for the backend and <span class="update-highlight">React with Vite</span> for the frontend.</p>
-        
-        <div class="tech-stack-visual">
-            <div class="stack-layer frontend">
-                <h4>Frontend Layer</h4>
-                <p><span class="update-highlight">React + Vite</span><br>Tailwind CSS</p>
-            </div>
-            <div class="stack-layer backend">
-                <h4>Backend Layer</h4>
-                <p>Flask (Python)<br>Database Integration</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>🛠️ Technology Stack Justification</h2>
-        
-        <div class="tech-grid">
-            <div class="tech-card">
-                <h4>Frontend: <span class="update-highlight">React with Vite</span></h4>
-                <ul>
-                    <li><strong>Component-Based Architecture:</strong> Enables reusable UI components and better code organization</li>
-                    <li><strong>Enhanced Performance:</strong> Vite provides fast cold start and rapid hot module replacement (HMR)</li>
-                    <li><strong>Modern Development Experience:</strong> Rich ecosystem with extensive libraries and tools</li>
-                    <li><strong>State Management:</strong> Built-in state management capabilities for complex applications</li>
-                    <li><strong>Developer Efficiency:</strong> Faster build times and optimized development workflow</li>
-                </ul>
-            </div>
-            
-            <div class="tech-card">
-                <h4>Backend: Flask (Python) with Firebase</h4>
-                <ul>
-                    <li><strong>Lightweight & Flexible:</strong> Minimalist framework perfect for medium-scale application</li>
-                    <li><strong>Python Ecosystem:</strong> Access to robust libraries for future AI/ML capabilities</li>
-                    <li><strong>Rapid Development:</strong> Simple setup and intuitive routing accelerate development</li>
-                    <li><strong>Firebase Integration:</strong> Seamless integration with Firebase services for authentication and database</li>
-                </ul>
-            </div>
-            
-            <div class="tech-card">
-                <h4>Database & Hosting</h4>
-                <ul>
-                    <li><strong>Firebase:</strong> Real-time database with built-in authentication and security</li>
-                    <li><strong>Cloud Storage:</strong> Firebase storage for media files and assets</li>
-                    <li><strong>Hostinger Deployment:</strong> Reliable hosting platform with good performance</li>
-                    <li><strong>Scalable Architecture:</strong> Firebase scales automatically with user growth</li>
-                </ul>
-            </div>
-        </div>
+      <div class="link-box">
+        <a
+          href="https://docs.google.com/document/d/1igDOZ3a0Sm9CrXERVTbiJ41mzJd9e73B/edit"
+          target="_blank"
+          >📄 View Project Documentation</a
+        >
+        <a
+          href="https://docs.google.com/spreadsheets/d/1LbfyZvyM8vv1W8i-M6si04n2i03RkF_z/edit?gid=954759923#gid=954759923"
+          target="_blank"
+          >📊 View Timeline Documentation</a
+        >
+      </div>
+      <a
+        class="download-btn"
+        href="https://example.com/project-documentation.pdf"
+        download
+        >📥 Download PDF</a
+      >
     </div>
 
     <div class="section">
-        <h2>📅 Project Timeline & Deliverables</h2>
-        
-        <div class="timeline-container">
-            <table class="timeline-table">
-                <thead>
-                    <tr>
-                        <th>Week</th>
-                        <th>Tasks</th>
-                        <th>Deliverables</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Week 1</strong></td>
-                        <td>Set up <span class="update-highlight">React + Vite</span> project structure<br>Configure Tailwind in React<br>Create reusable React components (navbar, footer)<br>Build Home Page component (hero section, toggle feature)<br>Build Our Story page component<br>Auth Page component</td>
-                        <td>React project skeleton + component library</td>
-                        <td><span class="status ongoing">Ongoing</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Week 2</strong></td>
-                        <td>Develop Programs page component<br>Develop Learning Paths page component<br>Build FAQs component (accordion style)<br>Build Contact Us component (form + map)<br>Build Register component<br><span class="update-highlight">Implement React Router for navigation</span></td>
-                        <td>Core React components implementation</td>
-                        <td><span class="status planned">Planned</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Week 3</strong></td>
-                        <td>Build Dashboard component (static)<br>Setup Flask backend folder structure<br>Configure Firebase integration<br><span class="update-highlight">Add React animations & interactivity</span><br><span class="update-highlight">Set up state management</span></td>
-                        <td>Backend setup + React component refinement</td>
-                        <td><span class="status planned">Planned</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Week 4</strong></td>
-                        <td>Implement Firebase authentication <span class="update-highlight">in React</span><br>Connect React forms to Firebase<br>Build API endpoints<br>Insert images, icons, assets<br><span class="update-highlight">Implement React hooks for data fetching</span></td>
-                        <td>Functional backend with React frontend integration</td>
-                        <td><span class="status planned">Planned</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Week 5</strong></td>
-                        <td>Cross-browser/mobile testing<br>Fix UI/UX bugs<br>Performance optimization<br><span class="update-highlight">React bundle optimization with Vite</span><br>Final testing & documentation</td>
-                        <td>Complete application</td>
-                        <td><span class="status planned">Planned</span></td>
-                    </tr>
-                </tbody>
-            </table>
+      <h2>📋 Project Overview</h2>
+      <p>
+        This document outlines the timeline and deliverables for the frontend
+        and backend development of a modern educational platform over 3 months.
+        The platform uses Flask for the backend and React with Vite for the
+        frontend, with no focus on security, DevOps, scaling, or deployment. The
+        system will integrate with Alexsure for generating salary slips based on
+        development progress.
+      </p>
+
+      <div class="tech-stack-visual">
+        <div class="stack-layer frontend">
+          <h4>Frontend Layer</h4>
+          <p>React + Vite<br />Tailwind CSS</p>
         </div>
+        <div class="stack-layer backend">
+          <h4>Backend Layer</h4>
+          <p>Flask (Python)<br />Firebase Integration</p>
+        </div>
+      </div>
     </div>
 
     <div class="section">
-        <h2>🔄 Development Phase Workflow</h2>
-        
-        <div class="flowchart">
-            <div class="phase-flow">
-                <div class="phase-box">
-                    <h4>Phase 1</h4>
-                    <p>Foundation</p>
-                    <small>Week 1</small>
-                </div>
-                <div class="phase-box">
-                    <h4>Phase 2</h4>
-                    <p>Core Components</p>
-                    <small>Week 2</small>
-                </div>
-                <div class="phase-box">
-                    <h4>Phase 3</h4>
-                    <p>Backend Setup</p>
-                    <small>Week 3</small>
-                </div>
-                <div class="phase-box">
-                    <h4>Phase 4</h4>
-                    <p>Integration</p>
-                    <small>Week 4</small>
-                </div>
-                <div class="phase-box">
-                    <h4>Phase 5</h4>
-                    <p>Testing & Optimization</p>
-                    <small>Week 5</small>
-                </div>
-            </div>
+      <h2>🛠️ Technology Stack Justification</h2>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Frontend: React with Vite</h4>
+          <ul>
+            <li>
+              <strong>Component-Based Architecture:</strong> Enables reusable UI
+              components and better code organization
+            </li>
+            <li>
+              <strong>Enhanced Performance:</strong> Vite provides fast cold
+              start and rapid hot module replacement (HMR)
+            </li>
+            <li>
+              <strong>Modern Development Experience:</strong> Rich ecosystem
+              with extensive libraries and tools
+            </li>
+            <li>
+              <strong>State Management:</strong> Built-in state management
+              capabilities for complex applications
+            </li>
+            <li>
+              <strong>Developer Efficiency:</strong> Faster build times and
+              optimized development workflow
+            </li>
+          </ul>
         </div>
 
-        <h3>Phase 1: Foundation (Week 1)</h3>
-        <p><strong>Objectives:</strong></p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li>Define project scope and requirements</li>
-            <li>Establish development environment with <span class="update-highlight">React and Vite</span></li>
-            <li>Create foundational React components and basic pages</li>
-        </ul>
-        
-        <p><strong>Key Decisions:</strong></p>
-        <ul style="margin-left: 20px;">
-            <li>Selected <span class="update-highlight">React with Vite</span> for modern frontend development</li>
-            <li>Chose Flask for its Python integration and simplicity</li>
-            <li>Firebase for database and authentication services</li>
-        </ul>
+        <div class="tech-card">
+          <h4>Backend: Flask (Python) with Firebase</h4>
+          <ul>
+            <li>
+              <strong>Lightweight & Flexible:</strong> Minimalist framework
+              perfect for medium-scale applications
+            </li>
+            <li>
+              <strong>Python Ecosystem:</strong> Access to robust libraries for
+              future AI/ML capabilities
+            </li>
+            <li>
+              <strong>Rapid Development:</strong> Simple setup and intuitive
+              routing accelerate development
+            </li>
+            <li>
+              <strong>Firebase Integration:</strong> Seamless integration with
+              Firebase services for authentication and database
+            </li>
+          </ul>
+        </div>
 
-        <h3>Phase 2: Core Components (Week 2)</h3>
-        <p><strong>Objectives:</strong></p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li>Implement main application pages as React components</li>
-            <li>Design reusable UI components</li>
-            <li>Build interactive elements with React</li>
-            <li><span class="update-highlight">Implement React Router for navigation</span></li>
-        </ul>
-        
-        <p><strong>Deliverables:</strong></p>
-        <ul style="margin-left: 20px;">
-            <li>Programs and Learning Paths page components</li>
-            <li>FAQ and Contact components with forms</li>
-            <li>Registration component</li>
-        </ul>
+        <div class="tech-card">
+          <h4>Database</h4>
+          <ul>
+            <li>
+              <strong>Firebase:</strong> Real-time database for data storage
+            </li>
+            <li>
+              <strong>Cloud Storage:</strong> Firebase storage for media files
+              and assets
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-        <h3>Phase 3: Backend Setup (Week 3)</h3>
-        <p><strong>Objectives:</strong></p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li>Setup Flask backend architecture</li>
-            <li>Configure Firebase integration</li>
-            <li><span class="update-highlight">Add React animations and interactivity</span></li>
-            <li><span class="update-highlight">Set up state management in React</span></li>
-        </ul>
-        
-        <p><strong>Technical Implementation:</strong></p>
-        <ul style="margin-left: 20px;">
-            <li>Flask project structure setup</li>
-            <li>Firebase configuration and SDK integration</li>
-            <li>Dashboard component creation</li>
-        </ul>
+    <div class="section">
+      <h2>
+        📅 Month 1 Timeline & Deliverables (Frontend Foundation & Basic Backend)
+      </h2>
 
-        <h3>Phase 4: Integration (Week 4)</h3>
-        <p><strong>Objectives:</strong></p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li>Implement Firebase authentication <span class="update-highlight">in React</span></li>
-            <li>Connect React forms to Firebase</li>
-            <li>Build API endpoints and data flow</li>
-            <li><span class="update-highlight">Implement React hooks for data fetching</span></li>
-        </ul>
-        
-        <p><strong>Technical Approach:</strong></p>
-        <ul style="margin-left: 20px;">
-            <li>Firebase Auth for user management</li>
-            <li>Firestore database integration</li>
-            <li>RESTful API development</li>
-            <li><span class="update-highlight">React context for state management</span></li>
-        </ul>
+      <div class="timeline-container">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th>Week</th>
+              <th>Tasks</th>
+              <th>Deliverables</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Week 1</strong></td>
+              <td>
+                Set up React + Vite project structure<br />
+                Configure Tailwind CSS in React<br />
+                Create reusable React components (navbar, footer)<br />
+                Build Home Page component (hero section, toggle feature)
+              </td>
+              <td>React project skeleton + basic components</td>
+              <td><span class="status completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 2</strong></td>
+              <td>
+                Build Our Story page component<br />
+                Build Auth Page component<br />
+                Develop Programs page component<br />
+                Implement React Router for navigation
+              </td>
+              <td>Core frontend page components</td>
+              <td><span class="status completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 3</strong></td>
+              <td>
+                Develop Learning Paths page component<br />
+                Build FAQs component (accordion style)<br />
+                Build Contact Us component (form + map)<br />
+                Build Register component
+              </td>
+              <td>Additional frontend components</td>
+              <td><span class="status in-progress">In Progress</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 4</strong></td>
+              <td>
+                Build Dashboard component (static layout)<br />
+                Setup Flask backend folder structure<br />
+                Configure Firebase integration<br />
+                Add React animations & interactivity
+              </td>
+              <td>Basic backend setup + frontend dashboard</td>
+              <td><span class="status in-progress">In Progress</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-        <h3>Phase 5: Testing & Optimization (Week 5)</h3>
-        <p><strong>Objectives:</strong></p>
-        <ul style="margin-left: 20px; margin-bottom: 15px;">
-            <li>Comprehensive testing across devices and browsers</li>
-            <li>Performance optimization</li>
-            <li><span class="update-highlight">React bundle optimization with Vite</span></li>
-            <li>Final deployment preparation</li>
-        </ul>
+    <div class="section">
+      <h2>
+        📅 Month 2 Timeline & Deliverables (Frontend Enhancements & Backend
+        APIs)
+      </h2>
+
+      <div class="timeline-container">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th>Week</th>
+              <th>Tasks</th>
+              <th>Deliverables</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Week 1</strong></td>
+              <td>
+                Implement Firebase authentication in React<br />
+                Connect React forms to Firebase<br />
+                Build basic Flask API endpoints for user data<br />
+                Set up state management (Context API)
+              </td>
+              <td>Basic frontend-backend integration</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 2</strong></td>
+              <td>
+                Enhance Dashboard with dynamic data fetching<br />
+                Build Flask APIs for Programs and Learning Paths<br />
+                Implement React hooks for data fetching<br />
+                Add form validation in React
+              </td>
+              <td>Dynamic dashboard + core APIs</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 3</strong></td>
+              <td>
+                Refine UI/UX for all pages<br />
+                Add transitions and animations to components<br />
+                Build Flask APIs for FAQs and Contact forms<br />
+                Test frontend-backend data flow
+              </td>
+              <td>Polished frontend + additional APIs</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 4</strong></td>
+              <td>
+                Admin Panel route (/admin) setup<br />
+                Build UI for Admin Dashboard<br />
+                Create Flask APIs for admin CRUD operations<br />
+                Test admin panel functionality
+              </td>
+              <td>Admin panel skeleton + APIs</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>
+        📅 Month 3 Timeline & Deliverables (Admin Features & Finalization)
+      </h2>
+
+      <div class="timeline-container">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th>Week</th>
+              <th>Tasks</th>
+              <th>Deliverables</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Week 1</strong></td>
+              <td>
+                Implement admin CRUD for Programs (title, image, description)<br />
+                Build member approval workflow in Flask<br />
+                Enhance Admin Dashboard UI<br />
+                Test admin workflows
+              </td>
+              <td>Functional admin panel</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 2</strong></td>
+              <td>
+                Add course enrollment features in React<br />
+                Build Flask APIs for enrollment management<br />
+                Implement notifications in React (basic alerts)<br />
+                Test frontend-backend integration
+              </td>
+              <td>Enrollment features + notifications</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 3</strong></td>
+              <td>
+                Ensure mobile responsiveness for all pages<br />
+                Fix UI/UX bugs across components<br />
+                Optimize React bundle with Vite<br />
+                Test cross-browser compatibility
+              </td>
+              <td>Mobile-ready frontend</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 4</strong></td>
+              <td>
+                Finalize all frontend components<br />
+                Test all Flask APIs for reliability<br />
+                Update documentation for Alexsure integration<br />
+                Conduct final testing of all features
+              </td>
+              <td>Complete frontend and backend</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔄 Development Phase Workflow</h2>
+
+      <div class="flowchart">
+        <div class="phase-flow">
+          <div class="phase-box">
+            <h4>Phase 1</h4>
+            <p>Frontend Foundation</p>
+            <small>Month 1 Week 1-2</small>
+          </div>
+          <div class="phase-box">
+            <h4>Phase 2</h4>
+            <p>Core Components</p>
+            <small>Month 1 Week 3</small>
+          </div>
+          <div class="phase-box">
+            <h4>Phase 3</h4>
+            <p>Backend Setup</p>
+            <small>Month 1 Week 4</small>
+          </div>
+          <div class="phase-box">
+            <h4>Phase 4</h4>
+            <p>Integration</p>
+            <small>Month 2 Week 1-2</small>
+          </div>
+          <div class="phase-box">
+            <h4>Phase 5</h4>
+            <p>Admin Features</p>
+            <small>Month 2 Week 4 - Month 3 Week 1</small>
+          </div>
+          <div class="phase-box">
+            <h4>Phase 6</h4>
+            <p>Finalization</p>
+            <small>Month 3 Week 3-4</small>
+          </div>
+        </div>
+      </div>
+
+      <h3>Phase 1: Frontend Foundation (Month 1 Week 1-2)</h3>
+      <p><strong>Objectives:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>Define project scope and requirements</li>
+        <li>Establish React + Vite environment</li>
+        <li>
+          Create foundational UI components (navbar, footer, Home, Our Story)
+        </li>
+      </ul>
+
+      <h3>Phase 2: Core Components (Month 1 Week 3)</h3>
+      <p><strong>Objectives:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>
+          Develop additional frontend pages (Learning Paths, FAQs, Contact,
+          Register)
+        </li>
+        <li>Ensure consistent UI design with Tailwind CSS</li>
+      </ul>
+
+      <h3>Phase 3: Backend Setup (Month 1 Week 4)</h3>
+      <p><strong>Objectives:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>Setup Flask backend structure</li>
+        <li>Configure Firebase integration</li>
+        <li>Add basic interactivity to frontend</li>
+      </ul>
+
+      <h3>Phase 4: Integration (Month 2 Week 1-2)</h3>
+      <p><strong>Objectives:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>Connect frontend to Firebase via Flask APIs</li>
+        <li>Implement dynamic data fetching in React</li>
+        <li>Build core APIs for user and program data</li>
+      </ul>
+
+      <h3>Phase 5: Admin Features (Month 2 Week 4 - Month 3 Week 1)</h3>
+      <p><strong>Objectives:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>Develop admin panel with CRUD operations</li>
+        <li>Implement member and course enrollment workflows</li>
+        <li>Add basic notification system</li>
+      </ul>
+
+      <h3>Phase 6: Finalization (Month 3 Week 3-4)</h3>
+      <p><strong>Objectives:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>Ensure mobile responsiveness and cross-browser compatibility</li>
+        <li>Fix UI/UX bugs and optimize frontend</li>
+        <li>Finalize APIs and documentation for Alexsure</li>
+      </ul>
+    </div>
+
+
+    <div class="section">
+      <h2>📊 Key Performance Metrics</h2>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">3 Months</div>
+          <p>Total Development Duration</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">100%</div>
+          <p>Feature Completion Target</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">Responsive</div>
+          <p>Mobile Compatibility</p>
+        </div>
+      </div>
     </div>
 
     <div class="appendix">
-        <h2>📋 Appendix</h2>
-        
-        <h3>Development Team</h3>
-        <ul style="margin-left: 20px; margin-bottom: 20px;">
-            <li><strong>Developer:</strong> Sibghatullah Asif</li>
-            <li><strong>Project Manager:</strong> Taha Kiyani </li>
-        </ul>
+      <h2>📋 Appendix</h2>
 
-        <h3>Technical Specifications</h3>
-        <ul style="margin-left: 20px;">
-            <li><strong>Frontend:</strong> <span class="update-highlight">React, Vite, JavaScript, Tailwind CSS</span></li>
-            <li><strong>Backend:</strong> Flask (Python)</li>
-            <li><strong>Database:</strong> Firebase Firestore</li>
-            <li><strong>Authentication:</strong> Firebase Auth</li>
-            <li><strong>Storage:</strong> Firebase Storage</li>
-            <li><strong>Deployment:</strong> Hostinger</li>
-            <li><strong>Build Tool:</strong> <span class="update-highlight">Vite</span></li>
-        </ul>
+      <h3>Development Team</h3>
+      <ul style="margin-left: 20px; margin-bottom: 20px">
+        <li>
+          <strong>Developer:</strong> Sibghatullah Asif (Frontend/Backend)
+        </li>
+        <li>
+          <strong>Project Manager:</strong> Taha Kiyani (Timeline &
+          Coordination)
+        </li>
+      </ul>
+
+      <h3>Technical Specifications</h3>
+      <ul style="margin-left: 20px">
+        <li>
+          <strong>Frontend:</strong> React, Vite, JavaScript, Tailwind CSS
+        </li>
+        <li><strong>Backend:</strong> Flask (Python)</li>
+        <li><strong>Database:</strong> Firebase Firestore</li>
+        <li><strong>Storage:</strong> Firebase Storage</li>
+        <li><strong>Build Tool:</strong> Vite (Dev Server & Bundler)</li>
+      </ul>
     </div>
 
     <div class="notification" id="downloadNotification">
-        Todo List downloaded successfully!
+      Documentation downloaded successfully!
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const downloadBtn = document.querySelector('.download-btn');
-            const notification = document.getElementById('downloadNotification');
-            
-            downloadBtn.addEventListener('click', function() {
-                // Show notification
-                notification.classList.add('show');
-                
-                // Hide notification after 3 seconds
-                setTimeout(function() {
-                    notification.classList.remove('show');
-                }, 3000);
-            });
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        const downloadBtn = document.querySelector(".download-btn");
+        const notification = document.getElementById("downloadNotification");
+
+        if (downloadBtn) {
+          downloadBtn.addEventListener("click", function () {
+            notification.classList.add("show");
+            setTimeout(function () {
+              notification.classList.remove("show");
+            }, 3000);
+          });
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
