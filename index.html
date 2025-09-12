@@ -389,19 +389,17 @@
     <div class="header">
       <h1>Website Development Project Documentation</h1>
       <p class="subtitle">
-        Note: This is only the website timeline for frontend and backend
-        development of the provided UI design website using Flask and React with
-        Vite. Learning page will be design only (no radinas concept)
-
-        Siber koza App Backend is not included in this timeline if siberKoza wants i
-        will provide them the api from the backend of website which they can
-        later use to build the backend of the app.
-        
+        Note: This timeline compresses the website frontend and backend
+        development into the first 2 months using Flask and React with Vite.
+        learning page will be simple design as shown in figma (No radinus )
+        Month 3 is dedicated to building the backend for the mobile app, where
+        the same backend will serve both the web and app. We will first set up,
+        understand the app frontend, and integrate the shared backend.
       </p>
 
       <p class="subtitle">
-        Project Start Date: September 1, 2025 | Last updated : September 12,
-        2025(contract sign date)
+        Project Start Date: September 1, 2025 | Last updated: September 12,
+        2025(contract-date)
       </p>
 
       <div class="link-box">
@@ -416,16 +414,18 @@
           >📊 View Timeline Documentation</a
         >
       </div>
- 
+    </div>
+
     <div class="section">
       <h2>📋 Project Overview</h2>
       <p>
         This document outlines the timeline and deliverables for the frontend
         and backend development of a modern educational platform over 3 months.
-        The platform uses Flask for the backend and React with Vite for the
-        frontend, The
-        system will integrate with Alexsure for generating salary slips based on
-        development progress.
+        The first 2 months focus on compressing the website development
+        (frontend with React/Vite and backend with Flask), with integration.
+        Month 3 is dedicated to the mobile app backend using the same shared
+        Flask backend. The Website timeline progess will integrate with Alexsure
+        for generating salary slips based on development progress.
       </p>
 
       <div class="tech-stack-visual">
@@ -436,6 +436,10 @@
         <div class="stack-layer backend">
           <h4>Backend Layer</h4>
           <p>Flask (Python)<br />Firebase Integration</p>
+        </div>
+        <div class="stack-layer frontend">
+          <h4>APP backend Layer</h4>
+          <p>React-naitive + tailwind<br />firebase-flask CSS</p>
         </div>
       </div>
     </div>
@@ -512,7 +516,8 @@
 
     <div class="section">
       <h2>
-        📅 Month 1 Timeline & Deliverables (Frontend Foundation & Basic Backend)
+        📅 Month 1 Timeline & Deliverables (Frontend Foundation & Basic Backend
+        Setup)
       </h2>
 
       <div class="timeline-container">
@@ -532,17 +537,21 @@
                 Set up React + Vite project structure<br />
                 Configure Tailwind CSS in React<br />
                 Create reusable React components (navbar, footer)<br />
-                Build Home Page component (hero section, toggle feature)
+                Build Home Page component (hero section, toggle feature)<br />
+                Build Our Story page component<br />
+                Build Auth Page component
               </td>
-              <td>React project skeleton + basic components</td>
+              <td>React project skeleton + basic components + initial pages</td>
               <td><span class="status completed">Completed</span></td>
             </tr>
             <tr>
               <td><strong>Week 2</strong></td>
               <td>
-                Build Our Story page component<br />
-                Build Auth Page component<br />
-                Develop Programs page component<br />
+                Build Programs page component<br />
+                Develop Learning Paths page component<br />
+                Build FAQs component (accordion style)<br />
+                Build Contact Us component (form + map)<br />
+                Build Register component<br />
                 Implement React Router for navigation
               </td>
               <td>Core frontend page components</td>
@@ -551,23 +560,25 @@
             <tr>
               <td><strong>Week 3</strong></td>
               <td>
-                Develop Learning Paths page component<br />
-                Build FAQs component (accordion style)<br />
-                Build Contact Us component (form + map)<br />
-                Build Register component
+                Build Dashboard component (static layout)<br />
+                Admin Panel route (/admin) setup (skeleton)<br />
+                Add React animations & interactivity<br />
+                Implement Firebase authentication in React<br />
+                Set up state management (Context API)
               </td>
-              <td>Additional frontend components</td>
+              <td>Additional frontend components + basic auth setup</td>
               <td><span class="status in-progress">In Progress</span></td>
             </tr>
             <tr>
               <td><strong>Week 4</strong></td>
               <td>
-                Build Dashboard component (static layout)<br />
                 Setup Flask backend folder structure<br />
                 Configure Firebase integration<br />
-                Add React animations & interactivity
+                Build basic Flask API endpoints for user data<br />
+                Connect React forms to Firebase via basic APIs<br />
+                Test initial frontend-backend data flow
               </td>
-              <td>Basic backend setup + frontend dashboard</td>
+              <td>Basic backend setup + initial integration</td>
               <td><span class="status in-progress">In Progress</span></td>
             </tr>
           </tbody>
@@ -577,8 +588,8 @@
 
     <div class="section">
       <h2>
-        📅 Month 2 Timeline & Deliverables (Frontend Enhancements & Backend
-        APIs)
+        📅 Month 2 Timeline & Deliverables (Integration, Admin Features &
+        Finalization)
       </h2>
 
       <div class="timeline-container">
@@ -595,45 +606,53 @@
             <tr>
               <td><strong>Week 1</strong></td>
               <td>
-                Implement Firebase authentication in React<br />
-                Connect React forms to Firebase<br />
-                Build basic Flask API endpoints for user data<br />
-                Set up state management (Context API)
-              </td>
-              <td>Basic frontend-backend integration</td>
-              <td><span class="status planned">Planned</span></td>
-            </tr>
-            <tr>
-              <td><strong>Week 2</strong></td>
-              <td>
                 Enhance Dashboard with dynamic data fetching<br />
                 Build Flask APIs for Programs and Learning Paths<br />
                 Implement React hooks for data fetching<br />
-                Add form validation in React
+                Add form validation in React<br />
+                Build Flask APIs for FAQs and Contact forms
               </td>
               <td>Dynamic dashboard + core APIs</td>
               <td><span class="status planned">Planned</span></td>
             </tr>
             <tr>
-              <td><strong>Week 3</strong></td>
+              <td><strong>Week 2</strong></td>
               <td>
                 Refine UI/UX for all pages<br />
                 Add transitions and animations to components<br />
-                Build Flask APIs for FAQs and Contact forms<br />
-                Test frontend-backend data flow
+                Build UI for Admin Dashboard<br />
+                Create Flask APIs for admin CRUD operations<br />
+                Implement admin CRUD for Programs (title, image, description)<br />
+                Build member approval workflow in Flask
               </td>
-              <td>Polished frontend + additional APIs</td>
+              <td>Polished frontend + admin APIs and features</td>
+              <td><span class="status planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td><strong>Week 3</strong></td>
+              <td>
+                Add course enrollment features in React<br />
+                Build Flask APIs for enrollment management<br />
+                Implement notifications in React (basic alerts)<br />
+                Test admin workflows and frontend-backend integration<br />
+                Enhance Admin Dashboard UI
+              </td>
+              <td>Enrollment features + notifications + tested admin</td>
               <td><span class="status planned">Planned</span></td>
             </tr>
             <tr>
               <td><strong>Week 4</strong></td>
               <td>
-                Admin Panel route (/admin) setup<br />
-                Build UI for Admin Dashboard<br />
-                Create Flask APIs for admin CRUD operations<br />
-                Test admin panel functionality
+                Ensure mobile responsiveness for all pages<br />
+                Fix UI/UX bugs across components<br />
+                Optimize React bundle with Vite<br />
+                Test cross-browser compatibility<br />
+                Finalize all frontend components<br />
+                Test all Flask APIs for reliability<br />
+                Update documentation for Alexsure integration<br />
+                Conduct final testing of all features
               </td>
-              <td>Admin panel skeleton + APIs</td>
+              <td>Complete, mobile-ready frontend and backend</td>
               <td><span class="status planned">Planned</span></td>
             </tr>
           </tbody>
@@ -643,7 +662,8 @@
 
     <div class="section">
       <h2>
-        📅 Month 3 Timeline & Deliverables (Admin Features & Finalization)
+        📅 Month 3 Timeline & Deliverables (Mobile App Backend Development &
+        Integration)
       </h2>
 
       <div class="timeline-container">
@@ -660,45 +680,50 @@
             <tr>
               <td><strong>Week 1</strong></td>
               <td>
-                Implement admin CRUD for Programs (title, image, description)<br />
-                Build member approval workflow in Flask<br />
-                Enhance Admin Dashboard UI<br />
-                Test admin workflows
+                Review and set up mobile app project structure<br />
+                Understand the mobile app frontend requirements and
+                components<br />
+                Analyze compatibility with existing Flask backend<br />
+                Document app-specific backend needs
               </td>
-              <td>Functional admin panel</td>
+              <td>App setup and requirements analysis</td>
               <td><span class="status planned">Planned</span></td>
             </tr>
             <tr>
               <td><strong>Week 2</strong></td>
               <td>
-                Add course enrollment features in React<br />
-                Build Flask APIs for enrollment management<br />
-                Implement notifications in React (basic alerts)<br />
-                Test frontend-backend integration
+                Adapt existing Flask APIs for mobile app compatibility<br />
+                Build any mobile-specific endpoints (e.g., for push
+                notifications or device features)<br />
+                Ensure shared backend handles both web and app requests
+                seamlessly<br />
+                Test API responses for mobile formats (e.g., JSON optimization)
               </td>
-              <td>Enrollment features + notifications</td>
+              <td>Adapted and extended backend APIs for app</td>
               <td><span class="status planned">Planned</span></td>
             </tr>
             <tr>
               <td><strong>Week 3</strong></td>
               <td>
-                Ensure mobile responsiveness for all pages<br />
-                Fix UI/UX bugs across components<br />
-                Optimize React bundle with Vite<br />
-                Test cross-browser compatibility
+                Integrate shared backend with mobile app frontend<br />
+                Implement authentication and data fetching in app context<br />
+                Handle app-specific workflows (e.g., offline support if
+                needed)<br />
+                Test integration points between app and backend
               </td>
-              <td>Mobile-ready frontend</td>
+              <td>Integrated backend with app frontend</td>
               <td><span class="status planned">Planned</span></td>
             </tr>
             <tr>
               <td><strong>Week 4</strong></td>
               <td>
-                Finalize all frontend components<br />
-                Test all Flask APIs for reliability<br />
-                Update documentation for Alexsure integration<br />
-                Conduct final testing of all features
+                Optimize backend for mobile performance<br />
+                Fix any integration bugs<br />
+                Conduct end-to-end testing for both web and app<br />
+                Update documentation for shared backend usage<br />
+                Finalize app backend deliverables
               </td>
-              <td>Complete frontend and backend</td>
+              <td>Fully tested and documented app backend</td>
               <td><span class="status planned">Planned</span></td>
             </tr>
           </tbody>
@@ -718,28 +743,23 @@
           </div>
           <div class="phase-box">
             <h4>Phase 2</h4>
-            <p>Core Components</p>
-            <small>Month 1 Week 3</small>
+            <p>Core Components & Backend Setup</p>
+            <small>Month 1 Week 3-4</small>
           </div>
           <div class="phase-box">
             <h4>Phase 3</h4>
-            <p>Backend Setup</p>
-            <small>Month 1 Week 4</small>
+            <p>Integration & Admin Features</p>
+            <small>Month 2 Week 1-3</small>
           </div>
           <div class="phase-box">
             <h4>Phase 4</h4>
-            <p>Integration</p>
-            <small>Month 2 Week 1-2</small>
+            <p>Website Finalization</p>
+            <small>Month 2 Week 4</small>
           </div>
           <div class="phase-box">
             <h4>Phase 5</h4>
-            <p>Admin Features</p>
-            <small>Month 2 Week 4 - Month 3 Week 1</small>
-          </div>
-          <div class="phase-box">
-            <h4>Phase 6</h4>
-            <p>Finalization</p>
-            <small>Month 3 Week 3-4</small>
+            <p>Mobile App Backend Setup & Integration</p>
+            <small>Month 3 Week 1-4</small>
           </div>
         </div>
       </div>
@@ -750,50 +770,52 @@
         <li>Define project scope and requirements</li>
         <li>Establish React + Vite environment</li>
         <li>
-          Create foundational UI components (navbar, footer, Home, Our Story)
+          Create foundational UI components (navbar, footer, Home, Our Story,
+          Auth, Programs, Learning Paths, etc.)
         </li>
       </ul>
 
-      <h3>Phase 2: Core Components (Month 1 Week 3)</h3>
+      <h3>Phase 2: Core Components & Backend Setup (Month 1 Week 3-4)</h3>
       <p><strong>Objectives:</strong></p>
       <ul style="margin-left: 20px; margin-bottom: 15px">
         <li>
-          Develop additional frontend pages (Learning Paths, FAQs, Contact,
-          Register)
+          Develop additional frontend pages and features (Dashboard, Admin
+          skeleton, animations)
         </li>
         <li>Ensure consistent UI design with Tailwind CSS</li>
+        <li>Setup Flask backend structure and Firebase integration</li>
+        <li>Initial integration of auth and basic APIs</li>
       </ul>
 
-      <h3>Phase 3: Backend Setup (Month 1 Week 4)</h3>
-      <p><strong>Objectives:</strong></p>
-      <ul style="margin-left: 20px; margin-bottom: 15px">
-        <li>Setup Flask backend structure</li>
-        <li>Configure Firebase integration</li>
-        <li>Add basic interactivity to frontend</li>
-      </ul>
-
-      <h3>Phase 4: Integration (Month 2 Week 1-2)</h3>
+      <h3>Phase 3: Integration & Admin Features (Month 2 Week 1-3)</h3>
       <p><strong>Objectives:</strong></p>
       <ul style="margin-left: 20px; margin-bottom: 15px">
         <li>Connect frontend to Firebase via Flask APIs</li>
         <li>Implement dynamic data fetching in React</li>
-        <li>Build core APIs for user and program data</li>
-      </ul>
-
-      <h3>Phase 5: Admin Features (Month 2 Week 4 - Month 3 Week 1)</h3>
-      <p><strong>Objectives:</strong></p>
-      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>Build core APIs for user, program, and admin data</li>
         <li>Develop admin panel with CRUD operations</li>
-        <li>Implement member and course enrollment workflows</li>
-        <li>Add basic notification system</li>
+        <li>Implement enrollment and notification features</li>
       </ul>
 
-      <h3>Phase 6: Finalization (Month 3 Week 3-4)</h3>
+      <h3>Phase 4: Website Finalization (Month 2 Week 4)</h3>
       <p><strong>Objectives:</strong></p>
       <ul style="margin-left: 20px; margin-bottom: 15px">
         <li>Ensure mobile responsiveness and cross-browser compatibility</li>
         <li>Fix UI/UX bugs and optimize frontend</li>
         <li>Finalize APIs and documentation for Alexsure</li>
+      </ul>
+
+      <h3>
+        Phase 5: Mobile App Backend Setup & Integration (Month 3 Week 1-4)
+      </h3>
+      <p><strong>Objectives:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px">
+        <li>Set up and understand mobile app frontend structure</li>
+        <li>Adapt and extend shared Flask backend for app compatibility</li>
+        <li>Integrate backend with app frontend</li>
+        <li>
+          Test, optimize, and document the shared backend for both platforms
+        </li>
       </ul>
     </div>
 
@@ -835,9 +857,9 @@
           <strong>Frontend:</strong> React, Vite, JavaScript, Tailwind CSS
         </li>
         <li><strong>Backend:</strong> Flask (Python)</li>
-        <li><strong>Database:</strong> Firebase ReakTime</li>
+        <li><strong>Database:</strong> Firebase Firestore</li>
         <li><strong>Storage:</strong> Firebase Storage</li>
-        <li><strong>Build Tool:</strong> Vite </li>
+        <li><strong>Build Tool:</strong> Vite (Dev Server & Bundler)</li>
       </ul>
     </div>
 
